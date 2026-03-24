@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import CountUp from "react-countup";
-import Footer from "../components/Footer";
+
 
 
 export default function Home() {
