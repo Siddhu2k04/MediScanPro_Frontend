@@ -1,0 +1,263 @@
+/* ================= FLOATING BUTTON ================= */
+body {
+  overflow-x: hidden;
+}
+
+.chat-btn {
+
+  z-index: 9999; /* 🔥 increase */
+
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  width: 65px;
+  height: 65px;
+
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, cyan, #00e6e6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+
+  box-shadow: 0 0 20px rgba(0,255,255,0.5);
+  transition: all 0.3s ease;
+
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ICON */
+.chat-btn img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* 🔥 Hover Effect */
+.chat-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 30px rgba(0,255,255,0.9);
+}
+
+/* 🔥 Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Pulse Ring */
+.chat-btn::after {
+  content: "";
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: rgba(0,255,255,0.3);
+  animation: pulse 2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+/* ================= CHATBOX ================= */
+.chatbox {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+
+  width: 320px;
+  height: 420px;
+
+  background: rgba(20, 30, 48, 0.95);
+  backdrop-filter: blur(15px);
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 0 30px rgba(0,255,255,0.3);
+
+  animation: slideUp 0.4s ease;
+  
+  z-index: 9999; /* 🔥 increase */
+
+}
+
+/* ================= HEADER ================= */
+.chatbox .header {
+  background: linear-gradient(135deg, cyan, #00e6e6);
+  color: black;
+
+  padding: 12px 15px;
+  font-weight: bold;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chatbox .header span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* ================= BODY ================= */
+.chatbox .body {
+  flex: 1;
+  padding: 12px;
+  color: white;
+  overflow-y: auto;
+  font-size: 14px;
+}
+
+/* ================= INPUT AREA ================= */
+.chatbox .footer {
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.chatbox input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+
+  background: #0f2027;
+  color: white;
+}
+
+.chatbox .footer button {
+  background: cyan;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.chatbox .footer button:hover {
+  background: #00e6e6;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes slideUp {
+  from {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ================= SCROLLBAR ================= */
+.chatbox .body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chatbox .body::-webkit-scrollbar-thumb {
+  background: cyan;
+  border-radius: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .chatbox {
+    width: 90%;
+    right: 5%;
+    bottom: 90px;
+    height: 70vh;
+  }
+
+  .chat-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .chat-btn img {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+
+/* MESSAGE BUBBLES */
+.msg {
+  padding: 8px 12px;
+  margin: 6px 0;
+  border-radius: 10px;
+  max-width: 80%;
+  font-size: 13px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* USER MESSAGE */
+.msg.user {
+  background: cyan;
+  color: black;
+  margin-left: auto;
+}
+
+/* BOT MESSAGE */
+.msg.bot {
+  background: #2c3e50;
+  color: white;
+  margin-right: auto;
+}
+
+/* FADE ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* QUICK QUESTIONS */
+.quick-questions {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.quick-questions button {
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+.quick-questions button:hover {
+  background: cyan;
+  color: black;
+}

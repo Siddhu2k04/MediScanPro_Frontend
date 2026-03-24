@@ -1,0 +1,81 @@
+/* Main Container */
+.analyze {
+  min-height: 90vh;
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+/* File Input */
+.analyze input {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+}
+
+/* Button */
+.analyze button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: cyan;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Button Hover */
+.analyze button:hover {
+  background: #00e6e6;
+  transform: scale(1.05);
+}
+
+/* Result Card */
+.result {
+  margin-top: 40px;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Glow Effect */
+.result:hover {
+  box-shadow: 0 0 25px rgba(0,255,255,0.4);
+}
+
+/* Text */
+.result h3 {
+  color: cyan;
+  font-size: 1.5rem;
+}
+
+.result p {
+  color: #ccc;
+}
+
+/* Loader Animation Center */
+.loader {
+  margin-top: 30px;
+}
+
+/* Keyframe Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
