@@ -40,7 +40,11 @@ export default function Navbar() {
       {/* Links */}
       <div className={`nav-links ${menuOpen ? "active" : ""}`}>
         <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
-        <NavLink to="/analyze" onClick={() => setMenuOpen(false)}>Analyze</NavLink>
+        <NavLink to="/analyze" onClick={() => setMenuOpen(false)}>Bone Fracture</NavLink>
+        <NavLink to="/analyze/pneumonia" onClick={() => setMenuOpen(false)}>Pneumonia</NavLink>
+        <NavLink to="/analyze/xray" onClick={() => setMenuOpen(false)}>X-ray</NavLink>
+        <NavLink to="/analyze/mri" onClick={() => setMenuOpen(false)}>MRI</NavLink>
+
         <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
         <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
       </div>

@@ -6,6 +6,9 @@ import Analyze from "./pages/Analyze";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Chatbot from "./components/Chatbot";
+import PneumoniaAnalyze from "./pages/PneumoniaAnalyze";
+import XrayAnalyze from "./pages/XrayAnalyze";
+import MRIAnalyze from "./pages/MRIAnalyze";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Route path="/analyze" element={<Analyze />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/analyze/pneumonia" element={<PneumoniaAnalyze />} />
+        <Route path="/analyze/xray" element={<XrayAnalyze />} />
+        <Route path="/analyze/mri" element={<MRIAnalyze />} />
       </Routes>
       <Chatbot />
         <Footer />
